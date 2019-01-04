@@ -7,10 +7,10 @@ function gcd(n1, n2) {
   let greater = Math.max(n1, n2)
   let lesser = Math.min(n1, n2)
 
-  if (greater % lesser < 2) {
-    return 1
-  } else if (greater % lesser == 0) {
+  if (greater % lesser == 0) {
     return lesser
+  } else if (greater % lesser < 2) {
+    return 1
   } else {
     return gcd(lesser, greater % lesser)
   }

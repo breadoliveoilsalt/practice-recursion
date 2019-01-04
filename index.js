@@ -2,6 +2,8 @@
   // https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php#EDITOR
   // https://medium.com/@lkaileh/practicing-recursion-af8bdaeec05e
 
+////////////////////////////////////////////////////////////////////////////////
+
 // Attempting greatest common divisor solution, based on Elucidian Algo
 function gcd(n1, n2) {
   let greater = Math.max(n1, n2)
@@ -15,3 +17,15 @@ function gcd(n1, n2) {
     return gcd(lesser, greater % lesser)
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+function factoral(num) {
+  if (num === 1) {
+    return 1
+  }
+
+  return num * factoral(num - 1)
+}
+
+////////////////////////////////////////////////////////////////////////////////

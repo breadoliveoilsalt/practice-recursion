@@ -41,3 +41,14 @@ function getRangeRecursively(n1, n2) {
   arr.push(getRangeRecursively(nextNumber, n2))
   return arr.flat()
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+function getSum(arr) {
+  if (arr.length ===1) {
+    return arr[0]
+  }
+
+  let newArr = [arr[0] + arr[1], ...arr.slice(2)]
+  return getSum(newArr)
+}

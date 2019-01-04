@@ -29,3 +29,15 @@ function factoral(num) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
+function getRangeRecursively(n1, n2) {
+  let arr = []
+  if (n1 === n2 - 1) {
+    return arr
+  }
+  let nextNumber = n1 + 1
+  arr.push(nextNumber)
+  arr.push(getRangeRecursively(nextNumber, n2))
+  return arr.flat()
+}

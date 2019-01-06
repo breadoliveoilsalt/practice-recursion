@@ -52,3 +52,40 @@ function getSum(arr) {
   let newArr = [arr[0] + arr[1], ...arr.slice(2)]
   return getSum(newArr)
 }
+
+// This is a solution from elsewhere. More space efficient than mine above.
+
+var array_sum = function(my_array) {
+  if (my_array.length === 1) {
+    return my_array[0];
+  }
+  else {
+    return my_array.pop() + array_sum(my_array);
+  }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Some craziness in Ruby:
+
+// def getNames(data)
+//     namesArray = []
+
+//     namesArray << data[:name]
+//     data[:children].each do |child|
+//         namesArray << getNames(child)
+//     end
+
+//     return namesArray
+// end
+
+////////////////////////////////////////////////////////////////////////////////
+
+// ignoring edge cases like bad input or non-factors
+function getExponent(product, base) {
+  if (product === base) {
+    return 1
+  }
+  let newProduct = product/base
+  return 1 + getExponent(newProduct, base)
+}

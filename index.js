@@ -45,7 +45,7 @@ function getRangeRecursively(n1, n2) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function getSum(arr) {
-  if (arr.length ===1) {
+  if (arr.length === 1) {
     return arr[0]
   }
 
@@ -89,3 +89,45 @@ function getExponent(product, base) {
   let newProduct = product/base
   return 1 + getExponent(newProduct, base)
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+// return the Fibonacci numbers up to argument
+
+// Solution to study. Some modifications by me. Works
+
+function fibonacciNumbersUpTo(num) {
+  if (num === 1) {
+    return [0]
+  }
+  if (num === 2) {
+    return [fibonacciNumbersUpTo(num - 1), 1].flat()
+  }
+
+    // Note the key is to make the recursive call to get everything up until
+    // num place, and then push num place given what you got.
+  let arr = fibonacciNumbersUpTo(num - 1).flat()
+  arr.push(arr[arr.length-1] + arr[arr.length -2])
+  return arr
+}
+
+
+// Scraps that did not work:
+// function fibNumbs(num) {
+//
+//   let arr = []
+//
+//   if (num === 1) {
+//     return arr.push(0)
+//   }
+//
+//   if (num === 2) {
+//     arr.push(fibNumbs(num - 1))
+//     arr.push(1)
+//     return arr
+//   }
+//
+//   // arr.push(fibNumbs(num-1) + fibNumbs(num-2))
+//   //
+//   // return arr.flat()
+// }

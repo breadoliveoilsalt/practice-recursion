@@ -131,3 +131,38 @@ function fibonacciNumbersUpTo(num) {
 //   //
 //   // return arr.flat()
 // }
+
+////////////////////////////////////////////////////////////////////////////////
+
+function isEven(n) {
+  if (n === 2) {
+    return true
+  } else if (n < 2 && n > 0) {
+    return false
+  } else {
+    return isEven(n-2)
+  }
+}
+
+// Interesting other solution:
+//
+// function is_even_recursion(number)
+// {
+//   if (number < 0)
+//   {
+//     number = Math.abs(number);
+//   }
+//   if (number===0)
+//   {
+//     return true;
+//   }
+//   if (number===1)
+//   {
+//     return false;
+//   }
+//   else
+//   {
+//     number = number - 2;
+//     return is_even_recursion(number);
+//   }
+// }

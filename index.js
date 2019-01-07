@@ -166,3 +166,18 @@ function isEven(n) {
 //     return is_even_recursion(number);
 //   }
 // }
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Just playing with a problem I thought of on the fly.  Keep multiplying input
+// by three until you get above 10000.  Return multiples in an array.
+
+function multiplyByThree(n) {
+  if (n > 10000) {
+    return [ ]
+  } else {
+    let arr = multiplyByThree(n*3)
+    arr.push(n)
+    return arr
+  }
+}

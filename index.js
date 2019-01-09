@@ -231,3 +231,29 @@ function mergeSort(arr) {
   secondHalf = arr.slice(midpoint + 1, arr.length - 1)
   merge(mergeSort(firstHalf), mergeSort(secondHalf))
 }
+
+
+// This solution is very interesting -- note how the function that is
+// recursively called is in the middle!!
+
+// Array.prototype.merge_Sort = function () {
+//   if (this.length <= 1)
+//   {
+//     return this;
+//   }
+//
+//   var half = parseInt(this.length / 2);
+//   var left = this.slice(0, half).merge_Sort();
+//   var right = this.slice(half,     this.length).merge_Sort();
+//   var merge = function (left, right)
+//   {
+//   var arry = [];
+//   while (left.length > 0 && right.length > 0)
+//   {
+//     arry.push((left[0] <= right[0]) ? left.shift() : right.shift());
+//   }
+//     return arry.concat(left).concat(right);
+//   };
+//
+//   return merge(left, right);
+// };

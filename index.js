@@ -181,3 +181,24 @@ function multiplyByThree(n) {
     return arr
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+function binarySearch(arr, target) {
+  let floor = -1
+  let ceiling = arr.length
+
+  while (floor + 1 < ceiling) {
+    guessIndex = (floor + ceiling)/2
+    guessValue = arr[guessIndex]
+    if (guessValue === target) {
+      return true
+    } else if (guessValue > target) {
+      ceiling = guessIndex
+    } else if (guessValue < target) {
+      floor = guessIndex
+    }
+  }
+  return false
+}

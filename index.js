@@ -202,3 +202,32 @@ function binarySearch(arr, target) {
   }
   return false
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+function merge(firstHalf, secondHalf) {
+  let newArr = [ ]
+
+  while (firstHalf.length || secondHalf.length) {
+    if (firstHalf[0] < secondHalf[0]) {
+      newArr.push(firstHalf.shift())
+    } else {
+      newArr.push(secondHalf.shift())
+    }
+  }
+
+    // calling reduce would be more space efficient:
+  return newArr.concat(firstHalf).concat(secondHalf)
+}
+
+function mergeSort(arr) {
+
+  if (arr.length <= 1) {
+    return arr
+  }
+
+  midpoint = arr.length/2
+  firstHalf = arr.slice(0, midpoint)
+  secondHalf = arr.slice(midpoint + 1, arr.length - 1)
+  merge(mergeSort(firstHalf), mergeSort(secondHalf))
+}

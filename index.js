@@ -257,3 +257,38 @@ function mergeSort(arr) {
 //
 //   return merge(left, right);
 // };
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Problem: reverse a string recursively
+
+function reverseString(str) {
+  if (str.length === 0) {
+    return ""
+  } else if (str.length === 1) {
+    return str
+  } else if (str.length === 2) {
+    return str.slice(1) + str.slice(0,1)
+  } else {
+    return str.slice(str.length - 1) + reverseString(str.slice(1, str.length - 1 )) + str.slice(0,1)
+  }
+}
+
+/// A more elegant solution from here: http://kevvv.in/untitledrecursion-in-javascript/
+
+// function reverse( str ) {
+//   if ( str.length <= 1 ) {
+//     return str;
+//   }
+//   return reverse( str.substr( 1 ) ) + str[ 0 ];
+// }
+
+
+// "cat" => "tac"
+// "cinco" => "ocnic"
+//  "four" => "ruof"
+// base cases:
+//    if str.length === 1, return str
+//    if str.length === 0, return ""
+//    if str.length === 2, return str[1] + str[0]
+// return str.pop() + reverseString(str.splice(str[1], str[str.length-2])) + str.shift()

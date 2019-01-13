@@ -292,3 +292,34 @@ function reverseString(str) {
 //    if str.length === 0, return ""
 //    if str.length === 2, return str[1] + str[0]
 // return str.pop() + reverseString(str.splice(str[1], str[str.length-2])) + str.shift()
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Problem: Write a map function
+
+function mapping(arr, callback) {
+  if (arr.length === 0) {
+    return []
+  }
+
+  return [callback(arr[0])].concat(mapping(arr.slice(1), callback))
+}
+
+let addFive = (n) => n + 5
+
+// Did not work, for future reference:
+// Note that chaining multiple pushes raises errors
+// function mapping(arr, callback) {
+//   if (arr.length === 1)
+//     return callback(arr[0])
+//   }
+//
+//   let newArr = []
+//   let firstEl = arr.shift()
+//   newArr.push(mapping([firstEl], callback)).push(mapping(arr, callback))
+//   return newArr
+// }
+//
+// let addFive = (n) => n + 5
+
+// Solution based on this: http://kevvv.in/untitledrecursion-in-javascript/
